@@ -12,7 +12,6 @@ const quickLinks = [
 const resources = [
   { label: "FAQs", href: "/faqs" },
   { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms" },
 ]
 
 const services = [

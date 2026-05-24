@@ -15,8 +15,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.vertixlogistics.com"),
   title: "Vertix Logistics Pvt. Ltd. | Precision & Trust in Logistics Solutions",
   description: "End-to-end transportation and logistics solutions designed for speed, transparency, and long-term business partnerships. Trusted by clients for over three decades across industries and supply chains.",
+  keywords: [
+    "logistics company India",
+    "freight forwarding India",
+    "FCL LCL shipping",
+    "warehousing and distribution India",
+    "supply chain solutions",
+    "express cargo services",
+    "3PL logistics India",
+    "cargo shipping India",
+    "international freight forwarding",
+    "pharmaceutical logistics",
+    "automotive logistics",
+    "aerospace logistics",
+    "FMCG logistics",
+    "retail logistics",
+    "electronics logistics",
+    "manufacturing logistics",
+    "Vertix Logistics",
+    "end-to-end logistics solutions",
+  ],
   icons: {
     icon: "/favicon.ico",
   },

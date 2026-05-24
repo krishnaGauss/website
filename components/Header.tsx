@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button"
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Industries", href: "/industries" },
+  { label: "Services", href: "/#services" },
+  { label: "Industries", href: "/#industries" },
 ]
 
 export default function Header() {
@@ -22,7 +22,7 @@ export default function Header() {
         <Link href="/" className="shrink-0">
           <Image
             src="/assets/logo.png"
-            alt="Vertix Logistics"
+            alt="Vertix Logistics Pvt Ltd Logo"
             width={220}
             height={50}
             style={{ height: "auto" }}
@@ -32,7 +32,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-12">
+        <nav className="hidden md:flex items-center gap-16">
           {navLinks.map(({ label, href }) => (
             <Link
               key={label}

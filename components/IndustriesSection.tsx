@@ -12,7 +12,7 @@ const industries = [
 
 export default function IndustriesSection() {
   return (
-    <section className="bg-white px-4 sm:px-6 lg:px-16 py-12 md:py-0 md:h-[40vh] flex items-center">
+    <section id="industries" className="bg-white px-4 sm:px-6 lg:px-16 py-12 md:py-0 md:h-[40vh] flex items-center">
       <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-12 items-start lg:items-center">
 
         {/* Left: heading block */}

@@ -136,7 +136,7 @@ export default function ContactBlock() {
       </div>
 
       {/* ── Right: white card floating inside the orange gradient ── */}
-      <div className="flex-1 flex items-stretch p-4 md:p-5">
+      <div className="flex-1 flex items-stretch p-4 md:p-10">
         <div className="flex-1 bg-white rounded-xl flex flex-col justify-center px-7 md:px-8 py-7 md:py-8">
 
           {/* Mobile-only heading */}
@@ -221,7 +221,7 @@ export default function ContactBlock() {
             </div>
 
             {/* Submit */}
-            <div className="mt-1">
+            <div className="mt-1 md:flex md:justify-end">
               <button
                 type="submit"
                 disabled={status === "loading"}

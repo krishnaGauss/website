@@ -17,6 +17,7 @@ export default function HeroSection() {
           src="/assets/hero.png"
           alt=""
           fill
+          sizes="68vw"
           className="object-cover object-top-left"
           priority
         />

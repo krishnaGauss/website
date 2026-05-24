@@ -62,9 +62,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="mx-4 sm:mx-6 lg:mx-16 border-t border-gray-100" />
-
       {/* Block 2 — image left, text right */}
       <section className="px-4 sm:px-6 lg:px-16 py-20">
         <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
@@ -120,18 +117,9 @@ export default function AboutPage() {
                   className="text-3xl font-bold"
                   style={{ color: "#E8521A" }}
                 >
-                  500+
+                  50+
                 </p>
                 <p className="text-gray-400 text-sm mt-1">Clients Served</p>
-              </div>
-              <div>
-                <p
-                  className="text-3xl font-bold"
-                  style={{ color: "#E8521A" }}
-                >
-                  PAN India
-                </p>
-                <p className="text-gray-400 text-sm mt-1">Network Reach</p>
               </div>
             </div>
           </div>

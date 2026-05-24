@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const bullets = ["Quick Response", "Custom Solutions", "Reliable Support"];
 
@@ -13,6 +14,8 @@ type FormState = {
   message: string;
 };
 
+type SubmitStatus = "idle" | "loading" | "success" | "error";
+
 export default function ContactBlock() {
   const [form, setForm] = useState<FormState>({
     fullName: "",
@@ -21,11 +24,35 @@ export default function ContactBlock() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState<SubmitStatus>("idle");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: form.fullName,
+          company_name: form.companyName,
+          phone: form.phone,
+          reply_to: form.email,
+          message: form.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      setStatus("success");
+      setForm({ fullName: "", companyName: "", phone: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   }
 
   const inputClass =
@@ -119,7 +146,17 @@ export default function ContactBlock() {
             </h3>
           </div>
 
-          <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-6">
+          {status === "success" && (
+            <div className="mb-4 rounded-md bg-green-50 border border-green-200 px-4 py-3 text-sm text-green-700 font-medium">
+              Message sent! We&apos;ll be in touch shortly.
+            </div>
+          )}
+          {status === "error" && (
+            <div className="mb-4 rounded-md bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700 font-medium">
+              Something went wrong. Please try again or email us directly.
+            </div>
+          )}
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
             {/* Row 1: Full Name + Company Name */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1">
@@ -187,11 +224,18 @@ export default function ContactBlock() {
             <div className="mt-1">
               <button
                 type="submit"
-                className="bg-[#E8521A] hover:bg-[#c94615] active:bg-[#a83a12] text-white font-semibold px-7 py-3 rounded-md text-sm transition-colors"
+                disabled={status === "loading"}
+                className="bg-[#E8521A] hover:bg-[#c94615] active:bg-[#a83a12] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-7 py-3 rounded-md text-sm transition-colors"
               >
-                <span className="hidden md:inline">Get a Free Quote</span>
-                <span className="md:hidden">Submit Request</span>
-                {" "}&#8594;
+                {status === "loading" ? (
+                  "Sending…"
+                ) : (
+                  <>
+                    <span className="hidden md:inline">Get a Free Quote</span>
+                    <span className="md:hidden">Submit Request</span>
+                    {" "}&#8594;
+                  </>
+                )}
               </button>
             </div>
           </form>

@@ -3,17 +3,17 @@
 import WorldMap from "@/components/ui/world-map";
 
 const L = {
-  burundi:     { lat: -3.3731,  lng: 29.9189  },
-  burkinaFaso: { lat: 12.3640,  lng: -1.5330  },
-  uganda:      { lat: 1.3733,   lng: 32.2903  },
-  noida:       { lat: 28.5355,  lng: 77.3910  },
-  mumbai:      { lat: 19.0760,  lng: 72.8777  },
-  uae:         { lat: 25.2048,  lng: 55.2708  },
+  burundi:     { lat: -32.3731,  lng: 29.9189  },
+  burkinaFaso: { lat: -2.3640,  lng: -1.5330  },
+  uganda:      { lat: -22.733,   lng: 28.2903  },
+  noida:       { lat: 17.5355,  lng: 80.3910  },
+  mumbai:      { lat: 9.0760,  lng: 76.8777  },
+  uae:         { lat: 6.2048,  lng: 55.2708  },
   usa:         { lat: 40.7128,  lng: -74.0060 },
   melbourne:   { lat: -37.8136, lng: 144.9631 },
   china:       { lat: 39.9042,  lng: 116.4074 },
   haifa:       { lat: 32.7940,  lng: 34.9896  },
-  tanzania:    { lat: -6.3690,  lng: 34.8888  },
+  tanzania:    { lat: -32.3690,  lng: 34.8888  },
 };
 
 const dots = [
@@ -57,7 +57,7 @@ export default function LocationsSection() {
       </div>
 
       {/* ── Mobile: map in document flow, below text ── */}
-      <div className="lg:hidden relative w-full pb-10 pointer-events-none select-none">
+      <div className="lg:hidden relative w-full pb-4 pointer-events-none select-none">
         <div className="absolute inset-x-0 top-0 h-10 z-10"    style={fadeTop} />
         <div className="absolute inset-x-0 bottom-10 h-10 z-10" style={fadeBottom} />
         <WorldMap dots={dots} lineColor="#f97316" />

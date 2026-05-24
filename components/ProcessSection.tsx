@@ -61,7 +61,7 @@ function HorizontalArrow({ id }: { id: number }) {
 
 export default function ProcessSection() {
   return (
-    <section className="bg-white pt-8 pb-16 md:py-0 md:h-[70vh] md:flex md:flex-col md:justify-center px-4 sm:px-6 md:px-8 lg:px-12">
+    <section className="bg-white pt-3 pb-16 md:py-0 md:h-[70vh] md:flex md:flex-col md:justify-center px-4 sm:px-6 md:px-8 lg:px-12">
       {/* Title */}
       <div className="text-center mb-12 md:mb-10">
         <span className="text-[#E8521A] text-4xl lg:text-5xl font-bold uppercase leading-tight">

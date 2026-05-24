@@ -164,15 +164,10 @@ export default function Footer() {
               <p className="text-xs text-gray-500 text-center sm:text-left">
                 © {new Date().getFullYear()} Vertix Logistics Pvt Ltd. All Rights Reserved.
               </p>
-              <p className="text-sm text-white">
+            </div>
+            <p className="text-sm text-white">
                 GSTIN: 09AAHCV6846M1ZH &nbsp;|&nbsp; CIN: U63030UP2020PTC136766
               </p>
-            </div>
-            <p className="text-xs text-gray-500 text-center sm:text-right">
-              Designed with{" "}
-              <span className="text-red-500" aria-label="love">♥</span>{" "}
-              for better logistics.
-            </p>
           </div>
         </div>
       </div>

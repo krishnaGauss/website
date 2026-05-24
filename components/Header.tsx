@@ -16,7 +16,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="w-full bg-zinc-50 shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-zinc-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="shrink-0">
@@ -51,7 +51,7 @@ export default function Header() {
             asChild
             className="bg-[#E8521A] hover:bg-[#c94615] text-white font-semibold px-5 py-2 rounded-md"
           >
-            <Link href="/quote">Get a Quote &rarr;</Link>
+            <Link href="/#contact">Get a Quote &rarr;</Link>
           </Button>
         </div>
 
@@ -94,7 +94,7 @@ export default function Header() {
               asChild
               className="w-full bg-[#E8521A] hover:bg-[#c94615] text-white font-semibold rounded-md"
             >
-              <Link href="/quote" onClick={() => setMobileOpen(false)}>
+              <Link href="/#contact" onClick={() => setMobileOpen(false)}>
                 Get a Quote &rarr;
               </Link>
             </Button>
